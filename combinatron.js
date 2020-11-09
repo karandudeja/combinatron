@@ -1,6 +1,6 @@
 // the script to create the button effects, generate combinations etc.
 
-console.log('CombinaTron Experiment by Karan Dudeja https://www.kdo.fyi/');
+console.log('CombinaTron by Karan Dudeja https://www.kdo.fyi/');
 
 const bg = document.querySelector('#divBack');
 const hT = document.querySelector('#tText');
@@ -56,34 +56,34 @@ btnCombinatron.addEventListener('mouseout', ()=>{
 
 //background checkbox and Color checkings
 bg.addEventListener('click', (event) => {
-    console.log('Background Chkbox clicked');
+    //console.log('Background Chkbox clicked');
     checkStates();   
 }, false);
 
 //Title Text checkbox and Color checkings
 hT.addEventListener('click', (event) => {
-    console.log('Title Text Chkbox clicked');
+    //console.log('Title Text Chkbox clicked');
     checkStates();
     checkTitleState(); 
 }, false);
 
 //Body Text checkbox and Color checkings
 bT.addEventListener('click', (event) => {
-    console.log('Paragraph Text Chkbox clicked');
+    //console.log('Paragraph Text Chkbox clicked');
     checkStates();
     checkParaState();  
 }, false);
 
 //Horizontal Divider Text checkbox and Color checkings
 hVal.addEventListener('click', (event) => {
-    console.log('Horizontal Divider Chkbox clicked');
+    //console.log('Horizontal Divider Chkbox clicked');
     checkStates();
     checkHoriState(); 
 }, false);
 
 //Image PlaceHolder checkbox and Color checkings
 imgPlcVal.addEventListener('click', (event) => {
-    console.log('Image Placeholder Chkbox clicked');
+    //console.log('Image Placeholder Chkbox clicked');
     checkStates();   
 }, false);
 
@@ -210,14 +210,14 @@ btnCombinatron.addEventListener('click', (e) => {
     for(let i = 0; i < myColorsClassList.length; i++){
 	    myColorsArr.push(myColorsClassList[i].value);
     }
-    console.log(myColorsArr);
+    //console.log(myColorsArr);
 
     //as of 24 July 2020
     //testArr = makeColsNumArr;
     //L = colorCreatedCounter;
     //Len = testArr.length;
-    console.log(`colorCreatedCounter Value is ${colorCreatedCounter}`);
-    console.log(`makeColorsNumArray is ${makeColsNumArr}`);
+    //console.log(`colorCreatedCounter Value is ${colorCreatedCounter}`);
+    //console.log(`makeColorsNumArray is ${makeColsNumArr}`);
     //printPermutations(testArr, Len, L);
     //make2DArrays(permutationArr, L);
 
@@ -225,7 +225,7 @@ btnCombinatron.addEventListener('click', (e) => {
     let arrLen = myColorsNumArray.length;
     //let myColsNum = colorCreatedCounter; //earlier had a '+ 1'
     let myColsNum = elements; //earlier it was the above
-    console.log(`printPermutations Fn is getting, myColsNumArray: ${myColorsNumArray} arrLen: ${arrLen} and myColsNum: ${myColsNum}`);
+    //console.log(`printPermutations Fn is getting, myColsNumArray: ${myColorsNumArray} arrLen: ${arrLen} and myColsNum: ${myColsNum}`);
     printPermutations(myColorsNumArray, arrLen, myColsNum);
     //make2DArrays(myColsNumArray, myColsNum);
     //console.log('permutationArr is ' + permutationArr);
@@ -234,10 +234,10 @@ btnCombinatron.addEventListener('click', (e) => {
     //renderColorDivs(ColorsPermuArray);
 
     //as on 5 Oct 2020
-    console.log('all 2D arrays made are:');
-    console.log(make2DArrays(permutationArr, myColsNum));
-    console.log('all 2D arrays, now SORTED and CLEANED are:');
-    console.log(required2Darr(permutationArr, myColsNum));
+    //console.log('all 2D arrays made are:');
+    //console.log(make2DArrays(permutationArr, myColsNum));
+    //console.log('all 2D arrays, now SORTED and CLEANED are:');
+    //console.log(required2Darr(permutationArr, myColsNum));
     let ColorsPermuArray = required2Darr(permutationArr, myColsNum);
     //console.log(ColorsPermuArray);
     renderColorDivs(ColorsPermuArray);
@@ -287,7 +287,7 @@ function renderColorDivs(arr){
     if(bT.checked==true){
         combiBody = document.createElement("p");
         combiBody.style.fontSize = `${pSize.value}`;
-        combiBody.innerHTML = "Dummy Dummy Dummy Text. Sometimes on the internet, you can find awful examples of dummy text.<br/><br/> Like this one used here, in a tiny design experiment by Karan Dudeja.";
+        combiBody.innerHTML = "Dummy Dummy Dummy Text. Sometimes on the internet, you can find awful examples of placeholder text.<br/><br/> Like this one used here, in a tiny design experiment by Karan Dudeja.";
     }
     if(hVal.checked==true){
         combiDvdr = document.createElement("div");
@@ -318,7 +318,7 @@ function renderColorDivs(arr){
       //sendValuesForContrastCheck(myColorsArr[arr[i][0]], myColorsArr[arr[i][1]]);
         for(let j=0; j < arr[i].length; j++){
             combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
-            console.log('coloring BG only with Image Placeholder');
+            //console.log('coloring BG only with Image Placeholder');
         }
         //combiInnerDiv.appendChild(combiDvdr);
         //combiInnerDiv.appendChild(combiHeading);
@@ -333,7 +333,7 @@ function renderColorDivs(arr){
         for(let j=0; j < arr[i].length; j++){
             combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
             combiDvdr.style.backgroundColor = myColorsArr[arr[i][1]];
-            console.log('coloring BG and Horizontal Divider ONLY');
+            //console.log('coloring BG and Horizontal Divider ONLY');
         }
         combiInnerDiv.appendChild(combiDvdr);
         //combiInnerDiv.appendChild(combiHeading);
@@ -352,7 +352,7 @@ function renderColorDivs(arr){
         for(let j=0; j < arr[i].length; j++){
             combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
             combiDvdr.style.backgroundColor = myColorsArr[arr[i][1]];
-            console.log('coloring BG only with Image Placeholder');
+            //console.log('coloring BG only with Image Placeholder');
         }
         combiInnerDiv.appendChild(combiDvdr);
         //combiInnerDiv.appendChild(combiHeading);
@@ -372,7 +372,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           //combiHeading.style.color = myColorsArr[arr[i][1]];
           combiBody.style.color = myColorsArr[arr[i][1]];
-          console.log('coloring BG and ParaText ONLY');
+          //console.log('coloring BG and ParaText ONLY');
       }
       //combiInnerDiv.appendChild(combiDvdr);
       //combiInnerDiv.appendChild(combiHeading);
@@ -391,7 +391,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiHeading.style.color = myColorsArr[arr[i][1]];
           //combiBody.style.color = myColorsArr[arr[i][1]];
-          console.log('coloring BG and Heading ONLY');
+          //console.log('coloring BG and Heading ONLY');
       }
       //combiInnerDiv.appendChild(combiDvdr);
       combiInnerDiv.appendChild(combiHeading);
@@ -410,7 +410,7 @@ function renderColorDivs(arr){
             combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
             combiHeading.style.color = myColorsArr[arr[i][1]];
             combiBody.style.color = myColorsArr[arr[i][2]];
-            console.log('coloring BG, Heading and Para ONLY');
+            //console.log('coloring BG, Heading and Para ONLY');
         }
         //combiInnerDiv.appendChild(combiDvdr);
         combiInnerDiv.appendChild(combiHeading);
@@ -441,7 +441,7 @@ function renderColorDivs(arr){
             combiHeading.style.color = myColorsArr[arr[i][1]];
             combiBody.style.color = myColorsArr[arr[i][2]];
             combiDvdr.style.backgroundColor = myColorsArr[arr[i][3]];
-            console.log('coloring BG, Heading, Para and Horizontal Divider');
+            //console.log('coloring BG, Heading, Para and Horizontal Divider');
         }
         combiInnerDiv.appendChild(combiDvdr);
         combiInnerDiv.appendChild(combiHeading);
@@ -469,7 +469,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiHeading.style.color = myColorsArr[arr[i][1]];
           combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
-          console.log('coloring BG, Heading and Horizontal Divider');
+          //console.log('coloring BG, Heading and Horizontal Divider');
       }
       combiInnerDiv.appendChild(combiDvdr);
       combiInnerDiv.appendChild(combiHeading);
@@ -488,7 +488,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiHeading.style.color = myColorsArr[arr[i][1]];
           combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
-          console.log('coloring BG, Heading, Horizontal Divider and Image');
+          //console.log('coloring BG, Heading, Horizontal Divider and Image');
       }
       combiInnerDiv.appendChild(combiDvdr);
       combiInnerDiv.appendChild(combiHeading);
@@ -507,7 +507,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiDvdr.style.backgroundColor = myColorsArr[arr[i][1]];
           combiBody.style.color = myColorsArr[arr[i][2]];
-          console.log('coloring BG, Body and Horizontal Divider');
+          //console.log('coloring BG, Body and Horizontal Divider');
       }
       combiInnerDiv.appendChild(combiDvdr);
       //combiInnerDiv.appendChild(combiHeading);
@@ -526,7 +526,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiBody.style.color = myColorsArr[arr[i][1]];
           combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
-          console.log('coloring BG, Body, Horizontal Divider and Image');
+          //console.log('coloring BG, Body, Horizontal Divider and Image');
       }
       combiInnerDiv.appendChild(combiDvdr);
       //combiInnerDiv.appendChild(combiHeading);
@@ -545,7 +545,7 @@ function renderColorDivs(arr){
             combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
             combiHeading.style.color = myColorsArr[arr[i][1]];
             combiBody.style.color = myColorsArr[arr[i][2]];
-            console.log('coloring BG, Heading, Para');
+            //console.log('coloring BG, Heading, Para');
         }
         //combiInnerDiv.appendChild(combiDvdr);
         combiInnerDiv.appendChild(combiHeading);
@@ -572,7 +572,7 @@ function renderColorDivs(arr){
       for(let j=0; j < arr[i].length; j++){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiHeading.style.color = myColorsArr[arr[i][1]];
-          console.log('coloring BG and Heading');
+          //console.log('coloring BG and Heading');
       }
       //combiInnerDiv.appendChild(combiDvdr);
       combiInnerDiv.appendChild(combiHeading);
@@ -590,7 +590,7 @@ function renderColorDivs(arr){
       for(let j=0; j < arr[i].length; j++){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiBody.style.color = myColorsArr[arr[i][1]];
-          console.log('coloring BG, Heading, Para');
+          //console.log('coloring BG, Heading, Para');
       }
       //combiInnerDiv.appendChild(combiDvdr);
       //combiInnerDiv.appendChild(combiHeading);
@@ -610,7 +610,7 @@ function renderColorDivs(arr){
             combiHeading.style.color = myColorsArr[arr[i][1]];
             combiBody.style.color = myColorsArr[arr[i][2]];
             combiDvdr.style.backgroundColor = myColorsArr[arr[i][3]];
-            console.log('coloring BG, Heading, Para and Horizontal Divider and Image');
+            //console.log('coloring BG, Heading, Para and Horizontal Divider and Image');
         }
         combiInnerDiv.appendChild(combiDvdr);
         combiInnerDiv.appendChild(combiHeading);
@@ -757,11 +757,11 @@ function sortFunction(a, b) {
 let bG, fG;
 
 let sendValuesForContrastCheck = (bGin, fGin, textVal) => {
-    console.log('/////// running contrast checker ///////');
+    //console.log('/////// running contrast checker ///////');
     bG = bGin;
     fG = fGin;
-    console.log(`Background color is ${bG}`);
-    console.log(`Foreground color is ${fG}`);
+    //console.log(`Background color is ${bG}`);
+    //console.log(`Foreground color is ${fG}`);
 
     // Get RGBA
     let backgroundR = hexToRgb(bG).r;
@@ -774,14 +774,14 @@ let sendValuesForContrastCheck = (bGin, fGin, textVal) => {
     let foregroundB = hexToRgb(fG).b;
     let foregroundColorRgba = ["" + foregroundR + "","" + foregroundG + "","" + foregroundB + "","0"];
 
-    console.log(`Background color RGB is ${backgroundColorRgba}`);
-    console.log(`Foreground color RGB is ${foregroundColorRgba}`);
+    //console.log(`Background color RGB is ${backgroundColorRgba}`);
+    //console.log(`Foreground color RGB is ${foregroundColorRgba}`);
 
     let backgroundLuma = luma(backgroundColorRgba);
     let foregroundLuma = luma(foregroundColorRgba);
 
-    console.log(`Background color Relative Luminance is ${backgroundLuma}`);
-    console.log(`Foreground color Relative Luminance is ${foregroundLuma}`);
+    //console.log(`Background color Relative Luminance is ${backgroundLuma}`);
+    //console.log(`Foreground color Relative Luminance is ${foregroundLuma}`);
 
     function checkContrast() {
         foregroundLuma = foregroundLuma + 0.05;
