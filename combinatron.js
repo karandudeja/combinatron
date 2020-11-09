@@ -488,7 +488,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiHeading.style.color = myColorsArr[arr[i][1]];
           combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
-          console.log('coloring BG, Heading and Horizontal Divider');
+          console.log('coloring BG, Heading, Horizontal Divider and Image');
       }
       combiInnerDiv.appendChild(combiDvdr);
       combiInnerDiv.appendChild(combiHeading);
@@ -526,7 +526,7 @@ function renderColorDivs(arr){
           combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
           combiBody.style.color = myColorsArr[arr[i][1]];
           combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
-          console.log('coloring BG, Heading and Horizontal Divider');
+          console.log('coloring BG, Body, Horizontal Divider and Image');
       }
       combiInnerDiv.appendChild(combiDvdr);
       //combiInnerDiv.appendChild(combiHeading);
