@@ -312,7 +312,7 @@ function renderColorDivs(arr){
     }
     
 
-    //case: Background & Image
+    //case 1: Background & Image
     if(hT.checked==false && bT.checked==false && hVal.checked==false && imgPlcVal.checked==true){
       //console.log('////////////////////// iteration Number ' + i);
       //sendValuesForContrastCheck(myColorsArr[arr[i][0]], myColorsArr[arr[i][1]]);
@@ -327,7 +327,7 @@ function renderColorDivs(arr){
         combiOuterDiv.appendChild(combiInnerDiv);
     }
 
-    //case: Background & Horizontal Ruler
+    //case 2: Background & Horizontal Ruler
     if(hT.checked==false && bT.checked==false && hVal.checked==true && imgPlcVal.checked==false){
         
         for(let j=0; j < arr[i].length; j++){
@@ -346,7 +346,7 @@ function renderColorDivs(arr){
         //makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Horizontal Divider & Image
+    //case 3: Background & Horizontal Divider & Image
     if(hT.checked==false && bT.checked==false && hVal.checked==true && imgPlcVal.checked==true){
         
         for(let j=0; j < arr[i].length; j++){
@@ -365,7 +365,7 @@ function renderColorDivs(arr){
         //makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Body 
+    //case 4: Background & Body 
     if(hT.checked==false && bT.checked==true && hVal.checked==false && imgPlcVal.checked==false){
       
       for(let j=0; j < arr[i].length; j++){
@@ -384,7 +384,7 @@ function renderColorDivs(arr){
       makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Heading 
+    //case 5: Background & Heading 
     if(hT.checked==true && bT.checked==false && hVal.checked==false && imgPlcVal.checked==false){
       
       for(let j=0; j < arr[i].length; j++){
@@ -403,7 +403,7 @@ function renderColorDivs(arr){
       makeContrastIndicator(contrastVal, combinationNumber);
     }
     
-    //case: Background & Heading & Body 
+    //case 6: Background & Heading & Body 
     if(hT.checked==true && bT.checked==true && hVal.checked==false && imgPlcVal.checked==false){
           
         for(let j=0; j < arr[i].length; j++){
@@ -433,7 +433,7 @@ function renderColorDivs(arr){
         //makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Heading & Body & Horizontal Divider
+    //case 7: Background & Heading & Body & Horizontal Divider
     if(hT.checked==true && bT.checked==true && hVal.checked==true && imgPlcVal.checked==false){
         
         for(let j=0; j < arr[i].length; j++){
@@ -462,7 +462,7 @@ function renderColorDivs(arr){
         }
     }
 
-    //case: Background & Heading & Horizontal Divider
+    //case 8: Background & Heading & Horizontal Divider
     if(hT.checked==true && bT.checked==false && hVal.checked==true && imgPlcVal.checked==false){
        
       for(let j=0; j < arr[i].length; j++){
@@ -481,7 +481,26 @@ function renderColorDivs(arr){
       makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Body & Horizontal Divider
+    //case 9: Background & Heading & Horizontal Divider & Image
+    if(hT.checked==true && bT.checked==false && hVal.checked==true && imgPlcVal.checked==true){
+       
+      for(let j=0; j < arr[i].length; j++){
+          combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
+          combiHeading.style.color = myColorsArr[arr[i][1]];
+          combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
+          console.log('coloring BG, Heading and Horizontal Divider');
+      }
+      combiInnerDiv.appendChild(combiDvdr);
+      combiInnerDiv.appendChild(combiHeading);
+      combiInnerDiv.appendChild(combiImg);
+      //combiInnerDiv.appendChild(combiBody);
+      combiOuterDiv.appendChild(combiInnerDiv);
+
+      let contrastVal = sendValuesForContrastCheck(myColorsArr[arr[i][0]], myColorsArr[arr[i][1]], tSize.value);
+      makeContrastIndicator(contrastVal, combinationNumber);
+    }
+
+    //case 10: Background & Body & Horizontal Divider
     if(hT.checked==false && bT.checked==true && hVal.checked==true && imgPlcVal.checked==false){
 
       for(let j=0; j < arr[i].length; j++){
@@ -500,7 +519,26 @@ function renderColorDivs(arr){
       makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Heading & Body & Image
+    //case 11: Background & Body & Horizontal Divider & Image
+    if(hT.checked==false && bT.checked==true && hVal.checked==true && imgPlcVal.checked==true){
+       
+      for(let j=0; j < arr[i].length; j++){
+          combiInnerDiv.style.backgroundColor = myColorsArr[arr[i][0]];
+          combiBody.style.color = myColorsArr[arr[i][1]];
+          combiDvdr.style.backgroundColor = myColorsArr[arr[i][2]];
+          console.log('coloring BG, Heading and Horizontal Divider');
+      }
+      combiInnerDiv.appendChild(combiDvdr);
+      //combiInnerDiv.appendChild(combiHeading);
+      combiInnerDiv.appendChild(combiImg);
+      combiInnerDiv.appendChild(combiBody);
+      combiOuterDiv.appendChild(combiInnerDiv);
+
+      let contrastVal = sendValuesForContrastCheck(myColorsArr[arr[i][0]], myColorsArr[arr[i][1]], pSize.value);
+      makeContrastIndicator(contrastVal, combinationNumber);
+    }
+
+    //case 12: Background & Heading & Body & Image
     if(hT.checked==true && bT.checked==true && hVal.checked==false && imgPlcVal.checked==true){
       
         for(let j=0; j < arr[i].length; j++){
@@ -528,7 +566,7 @@ function renderColorDivs(arr){
         }
     }
 
-    //case: Background & Heading & Image
+    //case 13: Background & Heading & Image
     if(hT.checked==true && bT.checked==false && hVal.checked==false && imgPlcVal.checked==true){
       
       for(let j=0; j < arr[i].length; j++){
@@ -546,7 +584,7 @@ function renderColorDivs(arr){
       makeContrastIndicator(contrastVal, combinationNumber);
     }
 
-    //case: Background & Body & Image
+    //case 14: Background & Body & Image
     if(hT.checked==false && bT.checked==true && hVal.checked==false && imgPlcVal.checked==true){
 
       for(let j=0; j < arr[i].length; j++){
@@ -564,7 +602,7 @@ function renderColorDivs(arr){
       makeContrastIndicator(contrastVal, combinationNumber);
   }
 
-    //case: Background & Heading & Body & Horizontal Divider & Image
+    //case 15: Background & Heading & Body & Horizontal Divider & Image
     if(hT.checked==true && bT.checked==true && hVal.checked==true && imgPlcVal.checked==true){
 
         for(let j=0; j < arr[i].length; j++){
