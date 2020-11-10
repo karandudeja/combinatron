@@ -39,11 +39,11 @@
     <div class="container my-sm-3 my-md-5" id="input-area">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4 offset-lg-4 my-3 my-sm-3 my-md-5">
-                <p id="includeElementsText"><strong>include the following elements:</strong></p>
+                <p id="includeElementsText"><strong>choose elements for the interface:</strong></p>
                 <ul class="list-unstyled">
                     <li>
-                        <input type="checkbox" name="divBack" class="mr-2 mb-3" id="divBack">
-                        <label for="divBack">Background<span id='mandatory'>*</span></label>
+                        <input type="checkbox" name="divBack" class="mr-2 mb-3" id="divBack" checked disabled="true">
+                        <label for="divBack">Background<span id='mandatory'></span></label>
                     </li>
                     <li>
                         <input type="checkbox" name="titleText" class="mr-2 mb-3" id="tText">
@@ -89,7 +89,7 @@
                 </ul>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-4 my-sm-3 my-md-5">
-                <p id="includeColorsText"><strong>include colors:</strong></p>
+                <p id="includeColorsText"><strong>choose colors for interface:</strong><span class="text-muted small" id='smart-text'></span></p>
                 <div id="colorsHolder">
                     <p id="colorsHolderText">no colors yet</p>
                 </div>
@@ -101,8 +101,8 @@
             <div class="col-sm-12 col-lg-8 offset-lg-4 my-5 my-sm-3 my-md-1">
                 <button type="button" class="btn btn-activate btn-lg btn-block py-5" id="btn-combinatron" disabled>Activate &nbsp;CombinaTron</button>
             </div>
-            <div class="col-12 my-1 d-flex justify-content-end">
-                <button type="button" class='btn btn-success btn-sm mt-sm-0 mt-3' id="refText">Refresh CombinaTron</button>
+            <div class="col-12 col-lg-8 offset-lg-4 my-1 d-flex justify-content-end">
+                <button type="button" class='btn btn-success btn-sm btn-block mt-sm-0 mt-3' id="refText">Refresh CombinaTron</button>
             </div>
         </div>
     </div>

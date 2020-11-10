@@ -22,6 +22,7 @@ const inclColTxt = document.getElementById("includeColorsText");
 const tSize = document.getElementById("titleSizes");
 const pSize = document.getElementById("paraSizes");
 const hSize = document.getElementById("horiSizes");
+const sTxt = document.getElementById("smart-text");
 
 let elements = 0;
 let colorCount = 3;
@@ -93,11 +94,15 @@ let makeColsNumArr = [];
 btnAddColor.addEventListener('click', (event) => {
   colorCreatedCounter++;
   checkStates();
+  let newColor = createRandomColor();
+  //console.log("newColor made is " + newColor);
   let colorPick = document.createElement("INPUT");
   colorPick.setAttribute('type', 'color');
   colorPick.setAttribute("id", "newColor"+colorCreatedCounter);
+  colorPick.setAttribute("value", newColor);
   colorPick.setAttribute("class", "myColor");
   colorPick.style.display = "inline";
+  colorPick.style.cursor = "pointer";
   colorPick.style.marginRight = "0.5em";
   blankColorPickDiv.appendChild(colorPick);
   makeColsNumArr.push(colorCreatedCounter);
@@ -105,6 +110,16 @@ btnAddColor.addEventListener('click', (event) => {
   //console.log(makeColsNumArr);
   return makeColsNumArr;
 }, false);
+
+function createRandomColor(){
+  let colorArr = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+  let colorString = "#";
+  for(let i=0; i<6; i++){
+    let randomColorIndex = Math.floor(Math.random() * colorArr.length);
+    colorString+=colorArr[randomColorIndex];
+  }
+  return colorString;
+}
 
 // deleting the color-input blocks
 btnDelColor.addEventListener('click', (event) => {
@@ -120,6 +135,7 @@ btnDelColor.addEventListener('click', (event) => {
 function checkStates(){
     if(colorCreatedCounter >= 0){
         btnDelColor.disabled = false;
+        btnAddColor.disabled = false;
         colorHolderDivText.style.display = "none";
     }
     if(colorCreatedCounter < 0){
@@ -145,6 +161,30 @@ function checkStates(){
     }
     if(bg.checked == false){
         btnCombinatron.disabled = true;
+    }
+
+    switch(colorCreatedCounter){
+      case -1:
+        sTxt.innerText = " add at least 2";
+        break;
+      case 0:
+        sTxt.innerText = " add one more";
+        break;
+      case 1:
+        sTxt.innerText = " good, more?";
+        break;
+      case 2:
+        sTxt.innerText = "  yeah, more?";
+        break;
+      case 3:
+        sTxt.innerText = " looks good!";
+        break;
+      case 4:
+        sTxt.innerText = " much to handle";
+        break;
+      case 5:
+        sTxt.innerText = " can't take further!";
+        break;
     }
 }
 
@@ -300,6 +340,7 @@ function renderColorDivs(arr){
         //combiImg.src = "https://picsum.photos/200/300";
         combiImg.innerHTML = "<svg width='1.0625em' height='1em' viewBox='0 0 17 16' class='bi bi-image' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' d='M14.002 2h-12a1 1 0 0 0-1 1v9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V3a1 1 0 0 0-1-1zm-12-1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z'/></svg>";
         combiImg.style.color = "#dddddd";
+        combiImg.style.opacity = "0.3";
         combiImg.style.fontSize = "1.5em";
         combiImg.style.display = "flex";
         combiImg.style.justifyContent = "center";
@@ -653,7 +694,7 @@ function renderColorDivs(arr){
 
   //window.scrollBy(0, 100);
   window.scrollBy({
-    top: 120,
+    top: 270,
     left: 0,
     behavior: 'smooth'
   });
@@ -815,10 +856,10 @@ let sendValuesForContrastCheck = (bGin, fGin, textVal) => {
     var aaaText = checkRating(7); // 
     var aaComponent = checkRating(3);
 
-    let bodyTextContrastValue = false;
-    let titleTextContrastValue = false;
-    let bodyTextSize = 0;
-    let titleTextSize = 0;
+    // let bodyTextContrastValue = false;
+    // let titleTextContrastValue = false;
+    // let bodyTextSize = 0;
+    // let titleTextSize = 0;
 
     if(textVal == 'h1' || textVal == 'h2'){
       ratioRoundedTitle = ratioRounded;
@@ -897,8 +938,8 @@ function luma(rgbaColor) {
 function makeContrastIndicator(score, combiNumb){
     let show_results_div = document.createElement('div');
     show_results_div.style.padding = '0.3em 0.55em';
-    show_results_div.style.border = '1.5px solid #222222';
-    show_results_div.style.borderRadius = '0.63em';
+    show_results_div.style.border = '1px solid #444444';
+    show_results_div.style.borderRadius = '0.55em';
     // show_results_div.style.backgroundColor = '#ffffff';
     show_results_div.style.position = 'absolute';
     show_results_div.style.right = '1em';
