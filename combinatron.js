@@ -305,7 +305,7 @@ function renderColorDivs(arr){
     //combiInnerDiv.style.margin = "1em";
     combiInnerDiv.style.padding = "2em";
     combiInnerDiv.style.border = "none";
-    combiInnerDiv.style.borderRadius = "1rem";
+    combiInnerDiv.style.borderRadius = "0.4rem";
     combiInnerDiv.style.minHeight = "21rem";
     combiInnerDiv.style.boxShadow = "0 2px 8px 0 rgba(0, 0, 0, 0.2)";
 
@@ -939,7 +939,7 @@ function makeContrastIndicator(score, combiNumb){
     let show_results_div = document.createElement('div');
     show_results_div.style.padding = '0.3em 0.55em';
     show_results_div.style.border = '1px solid #444444';
-    show_results_div.style.borderRadius = '0.55em';
+    show_results_div.style.borderRadius = '0.25em';
     // show_results_div.style.backgroundColor = '#ffffff';
     show_results_div.style.position = 'absolute';
     show_results_div.style.right = '1em';
